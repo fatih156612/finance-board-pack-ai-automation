@@ -12,35 +12,31 @@ notification).
 
 ---
 
-## 1. Repository structure
+# Repository structure
 
-1. Repository structure
-
-```text
+```
 board_pack_automation/
-├─ README.md
-├─ LICENSE
-├─ workflow.json           # High-level list of Make modules
-├─ data/
-│  └─ board_model_example.csv   # Example "Board_Model" Google Sheet
-├─ docs/
-│  └─ architecture.md      # Text architecture diagram
-├─ demo_output/
-│  ├─ sample_notion_row.md
-│  └─ sample_slack_message.md
-└─ screenshots/
-   └─ .gitkeep             # Drop screenshots here
+├── README.md
+├── LICENSE
+├── workflow.json
+├── data/
+│   └── board_model_example.csv
+├── docs/
+│   └── architecture.md
+├── demo_output/
+│   ├── sample_notion_row.md
+│   └── sample_slack_message.md
+└── screenshots/
+    ├── Google_Sheets_Actuals.png
+    ├── Make_Scenario_Overview.png
+    └── Notion_DB_Structure.png
 ```
 
-Once you add PNG/JPG files to `screenshots/`, they will render in this
-README via the gallery below.
+# Screenshot gallery
 
-## 2. Screenshot gallery
-
-```Key points:
-
-- The repo tree is wrapped in a fenced code block (` ```text ... ``` `).
-- The three `![...]()` image lines are **outside** that code block and start at column 1 (no leading spaces).
+![Google Sheets](screenshots/Google_Sheets_Actuals.png)  
+![Make Scenario](screenshots/Make_Scenario_Overview.png)  
+![Notion DB](screenshots/Notion_DB_Structure.png)
 
 ### 3. Commit
 
