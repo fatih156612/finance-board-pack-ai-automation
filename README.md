@@ -36,9 +36,9 @@ README via the gallery below.
 ## 2. Screenshot gallery
 
 ```markdown
-![Google Sheets](docs/screenshots/Google_Sheets_Actuals.png)
-![Make Scenario](docs/screenshots/Make_Scenario_Overview.png)
-![Notion DB](docs/screenshots/Notion_DB_Structure.png)
+![](screenshots/Google_Sheets_Actuals.png)
+![](screenshots/Make_Scenario_Overview.png)
+![](screenshots/Notion_DB_Structure.png)
 ```
 
 ## 3. How the Make scenario works (high level)
