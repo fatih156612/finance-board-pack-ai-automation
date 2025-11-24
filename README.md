@@ -35,13 +35,10 @@ README via the gallery below.
 
 ## 2. Screenshot gallery
 
-After you upload screenshots to `screenshots/` in GitHub, edit the
-filenames below to match. GitHub will render them automatically.
-
 ```markdown
-![Scenario overview](screenshots/scenario_overview.png)
-![Notion run log](screenshots/notion_run_log.png)
-![Google Sheet model](screenshots/board_model_sheet.png)
+![Google Sheets](docs/screenshots/Google_Sheets_Actuals.png)
+![Make Scenario](docs/screenshots/Make_Scenario_Overview.png)
+![Notion DB](docs/screenshots/Notion_DB_Structure.png)
 ```
 
 ## 3. How the Make scenario works (high level)
