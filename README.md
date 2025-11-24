@@ -1,6 +1,6 @@
 # Finance Board Pack AI Automation
 
-An automation that turns monthly Google Sheets actuals into MD&A commentary, writes to Notion, and notifies Slack — triggered via Webhook.
+An automation that turns monthly Google Sheets actuals into MD&A commentary (through OpenAI API), writes to Notion, and notifies Slack — triggered via Webhook.
 
 ---
 
@@ -28,7 +28,7 @@ finance-board-pack-ai-automation/
 
 ## 2. Screenshot gallery
 
-These render automatically because images are stored in `screenshots/` and linked relative to README.
+Images are stored in `screenshots/` and linked relative to README.
 
 ### Google Sheet structure
 ![Google Sheets](screenshots/Google_Sheets_Actuals.png)
